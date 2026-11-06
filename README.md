@@ -69,7 +69,7 @@ To port a move from another game, click **Port moves…** — see the [porting g
 
 ## Credits and license
 
-AnimIT is made by **SUL**.
+AnimIT is made by **SUL** ([MrSUL](https://github.com/isMrSUL)).
 
 It is free and open source under the [MIT License](LICENSE): you may use it, change it and share your own
 versions — just keep the copyright notice and **credit the original work (AnimIT by SUL)**.

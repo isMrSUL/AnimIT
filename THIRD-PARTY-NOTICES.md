@@ -1,6 +1,6 @@
 # Third-party notices
 
-AnimIT itself is © 2026 SUL and released under the [MIT License](LICENSE).
+AnimIT itself is © 2026 SUL (MrSUL) and released under the [MIT License](LICENSE).
 It uses the following third-party components. Each keeps its own license.
 
 ## Libraries used by the application
