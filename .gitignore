@@ -1,0 +1,24 @@
+# build output
+bin/
+obj/
+release/
+dist/
+*.user
+.vs/
+
+# Python
+__pycache__/
+*.pyc
+app/Porter/python/
+
+# never commit game files or proprietary DLLs
+oo2core*.dll
+*.pac
+*.cak
+*.clips
+*.clip
+*.utoc
+*.ucas
+*.uasset
+*.uexp
+*.iso

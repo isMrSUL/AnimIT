@@ -1,0 +1,686 @@
+{
+ "DEAD EYE": [
+  {
+   "DataIndex": 119,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 129,
+   "Montage_ID": "040_00014_000",
+   "MovesName": "DEAD EYE",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000119,
+   "SortOrder": 2,
+   "MovesCategory": 10,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 512,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Chain",
+   "Signature": "EFinisher_Type::Front_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": -30.995525360107422,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "GTS 2": [
+  {
+   "DataIndex": 2784,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 785,
+   "Montage_ID": "040_01572_000",
+   "MovesName": "GTS 2",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8002784,
+   "SortOrder": 2,
+   "MovesCategory": 10,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 512,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Chain",
+   "Signature": "EFinisher_Type::Front_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.5325239896774292,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "DYNAMITE DIAMOND RING PUNCH": [
+  {
+   "DataIndex": 1932,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 711,
+   "Montage_ID": "047_00031_000",
+   "MovesName": "DYNAMITE DIAMOND RING PUNCH",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8001932,
+   "SortOrder": 2,
+   "MovesCategory": 6,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Chain",
+   "Signature": "EFinisher_Type::Front_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": -102.80770874023438,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "THE BOOM": [
+  {
+   "DataIndex": 2805,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_DownAttack.DT_DownAttack",
+    "sub": ""
+   },
+   "DT_ID": 195,
+   "Montage_ID": "040_00814_011",
+   "MovesName": "THE BOOM",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8002805,
+   "SortOrder": 2,
+   "MovesCategory": 112,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_SitDown_Runnning",
+   "Signature": "EFinisher_Type::Rear_SitDown_Runnning",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 52.71966552734375,
+   "AllLocationOffsetY": -85.82984924316406,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "CROSS RHODES": [
+  {
+   "DataIndex": 125,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 135,
+   "Montage_ID": "040_00051_000",
+   "MovesName": "CROSS RHODES",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000125,
+   "SortOrder": 2,
+   "MovesCategory": 20,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Rear_Chain",
+   "Signature": "EFinisher_Type::Rear_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 13.361324310302734,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "SPRINGBOARD BLACK ARROW 7": [
+  {
+   "DataIndex": 911,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 308,
+   "Montage_ID": "052_00036_000",
+   "MovesName": "SPRINGBOARD BLACK ARROW 7",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000911,
+   "SortOrder": 2,
+   "MovesCategory": 0,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": false,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": -8.370880126953125,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "PACKAGE PILEDRIVER 2": [
+  {
+   "DataIndex": 40,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 48,
+   "Montage_ID": "008_00068_000",
+   "MovesName": "PACKAGE PILEDRIVER 2",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000040,
+   "SortOrder": 2,
+   "MovesCategory": 10,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 512,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Chain",
+   "Signature": "EFinisher_Type::Front_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 17.430522918701172,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "STING 1": [
+  {
+   "DataIndex": 500,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_StandTaunt.DT_StandTaunt",
+    "sub": ""
+   },
+   "DT_ID": 74,
+   "Montage_ID": "031_00099_000",
+   "MovesName": "STING 1",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000500,
+   "SortOrder": 2,
+   "MovesCategory": 72,
+   "MovesSubCategorys": [
+    75
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 0,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::None",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "STING 2": [
+  {
+   "DataIndex": 499,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_StandTaunt.DT_StandTaunt",
+    "sub": ""
+   },
+   "DT_ID": 73,
+   "Montage_ID": "031_00097_000",
+   "MovesName": "STING 2",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000499,
+   "SortOrder": 2,
+   "MovesCategory": 72,
+   "MovesSubCategorys": [
+    75
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 0,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::None",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "STING 3": [
+  {
+   "DataIndex": 498,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_StandTaunt.DT_StandTaunt",
+    "sub": ""
+   },
+   "DT_ID": 72,
+   "Montage_ID": "031_00095_000",
+   "MovesName": "STING 3",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000498,
+   "SortOrder": 2,
+   "MovesCategory": 72,
+   "MovesSubCategorys": [
+    75
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 0,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::None",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "FLOAT-OVER STUNNER": [
+  {
+   "DataIndex": 126,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 136,
+   "Montage_ID": "040_00053_000",
+   "MovesName": "FLOAT-OVER STUNNER",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000126,
+   "SortOrder": 2,
+   "MovesCategory": 20,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Rear_Chain",
+   "Signature": "EFinisher_Type::Rear_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 56.127105712890625,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "SPRINGBOARD COFFIN DROP 3": [
+  {
+   "DataIndex": 882,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 279,
+   "Montage_ID": "052_00018_000",
+   "MovesName": "SPRINGBOARD COFFIN DROP 3",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000882,
+   "SortOrder": 2,
+   "MovesCategory": 55,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::Corner_SpringBoard_Stand",
+   "Signature": "EFinisher_Type::Corner_SpringBoard_Stand",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 46.33183288574219,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "SPRINGBOARD COFFIN DROP 5": [
+  {
+   "DataIndex": 891,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 288,
+   "Montage_ID": "052_00018_000",
+   "MovesName": "SPRINGBOARD COFFIN DROP 5",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000891,
+   "SortOrder": 2,
+   "MovesCategory": 69,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": -12.3341064453125,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "COFFIN DROP 1": [
+  {
+   "DataIndex": 871,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 268,
+   "Montage_ID": "052_00018_000",
+   "MovesName": "COFFIN DROP 1",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000871,
+   "SortOrder": 2,
+   "MovesCategory": 0,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": false,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::None",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "COFFIN DROP 2": [
+  {
+   "DataIndex": 873,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 270,
+   "Montage_ID": "052_00018_000",
+   "MovesName": "COFFIN DROP 2",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000873,
+   "SortOrder": 2,
+   "MovesCategory": 0,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": false,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::None",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "PARADIGM SHIFT 2": [
+  {
+   "DataIndex": 521,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 218,
+   "Montage_ID": "040_00695_000",
+   "MovesName": "PARADIGM SHIFT 2",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000521,
+   "SortOrder": 2,
+   "MovesCategory": 10,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 512,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Chain",
+   "Signature": "EFinisher_Type::Front_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 50.584144592285156,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "RUNNING V-TRIGGER 1": [
+  {
+   "DataIndex": 236,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_RunningAttack.DT_RunningAttack",
+    "sub": ""
+   },
+   "DT_ID": 13,
+   "Montage_ID": "008_00004_100",
+   "MovesName": "RUNNING V-TRIGGER 1",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000236,
+   "SortOrder": 2,
+   "MovesCategory": 28,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 1,
+   "Finisher": "EFinisher_Type::Front_Running",
+   "Signature": "EFinisher_Type::Front_Running",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 139.42550659179688,
+   "AllLocationOffsetY": -167.33103942871094,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "ONE WINGED ANGEL": [
+  {
+   "DataIndex": 4,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_ChainMoves.DT_ChainMoves",
+    "sub": ""
+   },
+   "DT_ID": 10,
+   "Montage_ID": "008_00002_000",
+   "MovesName": "ONE WINGED ANGEL",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000004,
+   "SortOrder": 2,
+   "MovesCategory": 20,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 512,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 3,
+   "Finisher": "EFinisher_Type::Rear_Chain",
+   "Signature": "EFinisher_Type::Rear_Chain",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::Special",
+   "EnableMovesMenu": true,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": 0.0,
+   "AllLocationOffsetY": 41.91558837890625,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ],
+ "BLACK ARROW 1": [
+  {
+   "DataIndex": 894,
+   "DataTable": {
+    "soft": "/Game/GameData/Assets/DataTable/Animation/DT_Diving.DT_Diving",
+    "sub": ""
+   },
+   "DT_ID": 291,
+   "Montage_ID": "052_00036_000",
+   "MovesName": "BLACK ARROW 1",
+   "EnableTranslation": false,
+   "UnlockUniqueID": 8000894,
+   "SortOrder": 2,
+   "MovesCategory": 0,
+   "MovesSubCategorys": [
+    0
+   ],
+   "MovesTag_AttackType": 0,
+   "MovesTag_Function": 0,
+   "MovesTag_MovesType": 0,
+   "MovesTag_DamagePart": 2,
+   "Finisher": "EFinisher_Type::None",
+   "Signature": "EFinisher_Type::None",
+   "TagFinisher": "EFinisher_Type::None",
+   "SpecialRestriction": "EMoves_SpecialRestriction::None",
+   "EnableMovesMenu": false,
+   "DistanceOffsetType": "EMoves_PreviewDistOffsetType::Player2Only",
+   "DistanceOffset": -30.65533447265625,
+   "AllLocationOffsetY": 0.0,
+   "PartnerOffset": [
+    0.0,
+    0.0
+   ],
+   "IsDownRotate2P": false
+  }
+ ]
+}

@@ -1,0 +1,311 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:AnimIT.Controls"
+        x:Class="AnimIT.MainWindow" Title="AnimIT — Splicer Tool" Width="1640" Height="960" MinWidth="1200" MinHeight="720"
+        WindowStartupLocation="CenterScreen" Icon="/Assets/animit.ico">
+  <Grid RowDefinitions="Auto,*,Auto">
+    <!-- header: the AnimIT mark, the game folder, save -->
+    <Border Grid.Row="0" Background="{StaticResource Surface}" Padding="18,12">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+          <!-- the logo: an A of two motion curves crossing, a keyframe as its crossbar (Controls\LogoMark.cs) -->
+          <c:LogoMark Width="40" Height="40" />
+          <StackPanel VerticalAlignment="Center" Spacing="1">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <TextBlock Text="AnimIT" FontSize="20" FontWeight="Bold" />
+              <Border Classes="tag" VerticalAlignment="Center"><TextBlock Text="splicer tool" FontSize="10.5" FontWeight="SemiBold" Foreground="{StaticResource AccentHi}" /></Border>
+            </StackPanel>
+            <TextBlock Classes="sub" Text="Splice, edit and save SvR 2011 moves" />
+          </StackPanel>
+        </StackPanel>
+        <Border Grid.Column="1" Margin="30,0,12,0" VerticalAlignment="Center" Classes="field">
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Classes="faint" Text="Game" VerticalAlignment="Center" Margin="12,0,6,0" />
+            <TextBox Grid.Column="1" x:Name="GameBox" Classes="bare" Watermark="SvR 2011 game folder" />
+          </Grid>
+        </Border>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <Button x:Name="BrowseButton" Content="Browse…" />
+          <Button x:Name="ScanButton" Content="Load moves" />
+          <Button x:Name="PortButton" Content="Port moves…" IsEnabled="False" />
+          <Button x:Name="SaveButton" Classes="accent" Content="Save to game…" IsEnabled="False" Margin="8,0,0,0" />
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <!-- body -->
+    <Grid Grid.Row="1" Margin="12,10,12,10" ColumnDefinitions="330,10,*,10,360">
+      <!-- left: the move library -->
+      <Border Grid.Column="0" Classes="panel" Padding="14">
+        <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
+          <Grid ColumnDefinitions="Auto,*,Auto">
+            <Border Classes="bar" />
+            <TextBlock Grid.Column="1" Classes="h" Text="Move library" />
+            <TextBlock Grid.Column="2" x:Name="CountText" Classes="faint" Text="no game" VerticalAlignment="Center" />
+          </Grid>
+          <Grid Grid.Row="1" ColumnDefinitions="*,8,150" Margin="0,12,0,8">
+            <TextBox x:Name="SearchBox" Watermark="Find a move by name or id" />
+            <ComboBox Grid.Column="2" x:Name="CategoryBox" HorizontalAlignment="Stretch" ToolTip.Tip="Move type (the Create-a-Moveset lists)" />
+          </Grid>
+          <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="6" Margin="0,0,0,10">
+            <ToggleButton x:Name="FilterAll" Content="Everything" IsChecked="True" Classes="chip" />
+            <ToggleButton x:Name="FilterStock" Content="Original" Classes="chip" />
+            <ToggleButton x:Name="FilterPacks" Content="Installed packs" Classes="chip" />
+          </StackPanel>
+          <ListBox Grid.Row="3" x:Name="MoveList" Classes="rows">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <Border Classes="row">
+                  <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="13" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Grid.Column="1" Text="{Binding Badge}" FontSize="10" Foreground="{StaticResource Faint}" Margin="8,0,0,0" VerticalAlignment="Center" />
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" Margin="0,3,0,0">
+                      <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Ellipse Width="7" Height="7" Fill="#E8C4AE" VerticalAlignment="Center" />
+                        <TextBlock Classes="mono" Text="{Binding P1}" />
+                      </StackPanel>
+                      <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Ellipse Width="7" Height="7" Fill="#82A8E4" VerticalAlignment="Center" />
+                        <TextBlock Classes="mono" Text="{Binding P2}" />
+                      </StackPanel>
+                    </StackPanel>
+                  </Grid>
+                </Border>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <Border Grid.Row="4" Classes="well" Margin="0,12,0,0">
+            <StackPanel Spacing="8">
+              <TextBlock x:Name="PickText" Classes="sub" TextWrapping="Wrap" Text="Choose a move from the library." />
+              <ComboBox x:Name="PickPhase" HorizontalAlignment="Stretch" IsVisible="False" />
+              <Grid ColumnDefinitions="*,10,*">
+                <StackPanel Spacing="3">
+                  <TextBlock Classes="label" Text="From frame" />
+                  <NumericUpDown x:Name="PickIn" Minimum="0" Value="0" FormatString="0" Increment="1" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Spacing="3">
+                  <TextBlock Classes="label" Text="To frame" />
+                  <NumericUpDown x:Name="PickOut" Minimum="0" Value="0" FormatString="0" Increment="1" />
+                </StackPanel>
+              </Grid>
+              <Button x:Name="AddButton" Classes="accent" Content="+  Add to timeline" HorizontalAlignment="Stretch" IsEnabled="False" />
+              <Button x:Name="WholeButton" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" IsVisible="False"
+                      ToolTip.Tip="Adds every part the game plays for this move, one after the other (for a dive: the jump and the landing)">
+                <StackPanel Spacing="1">
+                  <TextBlock Text="+  Add whole move" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                  <TextBlock x:Name="WholeText" Classes="faint" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </Border>
+        </Grid>
+      </Border>
+      <GridSplitter Grid.Column="1" ResizeDirection="Columns" />
+
+      <!-- centre: the stage (3D) with a floating transport, then the timeline -->
+      <Grid Grid.Column="2" RowDefinitions="*,10,Auto">
+        <Border Classes="panel" ClipToBounds="True">
+          <Grid>
+            <Grid x:Name="StageGrid" ColumnDefinitions="*,0">
+              <c:Viewport3D x:Name="View" />
+              <!-- split view: the move picked in the library, next to the timeline's move -->
+              <Border Grid.Column="1" x:Name="SidePane" IsVisible="False" BorderBrush="{StaticResource Line}" BorderThickness="2,0,0,0" ClipToBounds="True">
+                <Grid>
+                  <c:Viewport3D x:Name="SideView" />
+                  <StackPanel Margin="14,10" HorizontalAlignment="Left" VerticalAlignment="Top" Spacing="2">
+                    <TextBlock Classes="faint" Text="LIBRARY PREVIEW" FontWeight="SemiBold" />
+                    <TextBlock x:Name="SideTitle" FontWeight="SemiBold" Foreground="{StaticResource AccentHi}" TextWrapping="Wrap" MaxWidth="320" />
+                    <TextBlock x:Name="SideFrame" Classes="faint" FontFamily="Consolas" />
+                  </StackPanel>
+                  <Button x:Name="SideClose" Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" ToolTip.Tip="Close the split view" />
+                </Grid>
+              </Border>
+            </Grid>
+            <TextBlock x:Name="TimelineTag" Classes="faint" Text="YOUR TIMELINE" FontWeight="SemiBold" Margin="14,28,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" IsVisible="False" />
+            <TextBlock Classes="faint" Text="drag: orbit  ·  right drag: pan  ·  wheel: zoom  ·  double click: re-centre" Margin="14,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Border Classes="transport" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14">
+              <StackPanel Orientation="Horizontal" Spacing="6">
+                <Button x:Name="PrevButton" Classes="round" Content="‹" />
+                <Button x:Name="PlayButton" Classes="round accent" MinWidth="44"><Path Fill="White" Data="M 0,0 L 11,6.5 L 0,13 Z" /></Button>
+                <Button x:Name="NextButton" Classes="round" Content="›" />
+                <Button x:Name="CutButton" Content="✂  Cut" Margin="6,0,0,0" IsEnabled="False" ToolTip.Tip="Cut the clip under the playhead in two (key C)" />
+                <ToggleButton x:Name="LoopToggle" Content="Loop" IsChecked="True" Classes="chip" Margin="6,0,0,0" VerticalAlignment="Center" />
+                <ToggleButton x:Name="SplitToggle" Content="Split view" IsChecked="True" Classes="chip" Margin="6,0,0,0" VerticalAlignment="Center"
+                              ToolTip.Tip="When the timeline has clips, a move you pick in the library plays on the right, next to your timeline" />
+                <Border Width="1" Background="{StaticResource Line}" Margin="8,6" />
+                <TextBlock Classes="faint" Text="frame" VerticalAlignment="Center" />
+                <TextBlock x:Name="FrameText" Text="0" FontFamily="Consolas" FontSize="15" FontWeight="Bold" Foreground="{StaticResource AccentHi}" MinWidth="66" VerticalAlignment="Center" />
+                <Button x:Name="RebuildButton" Content="Refresh" Margin="4,0,0,0" />
+              </StackPanel>
+            </Border>
+          </Grid>
+        </Border>
+        <Border Grid.Row="2" Classes="panel" ClipToBounds="True">
+          <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+            <Grid ColumnDefinitions="Auto,Auto,*,Auto,Auto" Margin="14,10,14,6">
+              <Border Classes="bar" />
+              <TextBlock Grid.Column="1" Classes="h" Text="Timeline" />
+              <TextBlock Grid.Column="2" Classes="faint" TextTrimming="CharacterEllipsis" Margin="14,0" VerticalAlignment="Center"
+                         Text="click: move the playhead · C or Cut: cut there · drag a clip's ends to trim · drag a clip to reorder · right click for more" />
+              <Slider Grid.Column="3" x:Name="ZoomSlider" Minimum="0" Maximum="1" Value="0.5" Width="140" VerticalAlignment="Center" />
+              <TextBlock Grid.Column="4" x:Name="ZoomText" Text="100%" Classes="faint" MinWidth="40" Margin="8,0,0,0" VerticalAlignment="Center" />
+            </Grid>
+            <c:TimelineView Grid.Row="1" x:Name="Timeline" />
+            <!-- the spliced move's events (hits, ring shakes, sounds...) where the saved move will play them: drag to re-time -->
+            <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,*,Auto,Auto,Auto" Margin="14,8,14,4">
+              <Border Classes="bar" />
+              <ToggleButton Grid.Column="1" x:Name="EventsToggle" Classes="chip" Content="Events" IsChecked="True" VerticalAlignment="Center"
+                            ToolTip.Tip="Show or hide the move's events: hits, ring shakes, rumbles and sounds" />
+              <TextBlock Grid.Column="2" x:Name="EventsInfo" Classes="faint" TextTrimming="CharacterEllipsis" Margin="14,0" VerticalAlignment="Center" />
+              <ToggleButton Grid.Column="3" x:Name="EventsAll" Classes="chip" Content="All events" VerticalAlignment="Center" Margin="0,0,6,0"
+                            ToolTip.Tip="Also show the small events (grabs, states, positions)" />
+              <Button Grid.Column="4" x:Name="EventsReset" Content="Reset timing" Classes="small" IsEnabled="False" Margin="0,0,6,0"
+                      ToolTip.Tip="Put every event back where its clip has it" />
+              <Button Grid.Column="5" x:Name="EventsNudgeL" Content="‹" Classes="small" IsEnabled="False" ToolTip.Tip="Move the selected event 1 frame earlier" />
+            </Grid>
+            <c:EventTimeline Grid.Row="3" x:Name="EvLine" Margin="0,0,0,8" />
+          </Grid>
+        </Border>
+      </Grid>
+      <GridSplitter Grid.Column="3" ResizeDirection="Columns" />
+
+      <!-- right: clip settings | all clips -->
+      <Border Grid.Column="4" Classes="panel" Padding="10,8,10,10">
+        <TabControl x:Name="SideTabs">
+          <TabItem Header="Clip">
+            <ScrollViewer x:Name="Inspector" IsEnabled="False">
+              <StackPanel Spacing="14" Margin="4,10,8,4">
+                <StackPanel Spacing="2">
+                  <TextBlock Classes="faint" Text="selected clip" />
+                  <TextBlock x:Name="SelName" FontSize="16" FontWeight="Bold" Text="—" TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+                <Border Classes="well">
+                  <Grid ColumnDefinitions="Auto,8,*" RowDefinitions="Auto,6,Auto,Auto">
+                    <Ellipse Width="9" Height="9" Fill="#E8C4AE" VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="2" x:Name="SelAttacker" Classes="mono" TextWrapping="Wrap" />
+                    <Ellipse Grid.Row="2" Width="9" Height="9" Fill="#82A8E4" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="2" x:Name="SelReceiver" Classes="mono" TextWrapping="Wrap" />
+                    <StackPanel Grid.Row="3" Grid.Column="2" x:Name="ReactionPanel" IsVisible="False" Spacing="3" Margin="0,6,0,0">
+                      <TextBlock Classes="faint" TextWrapping="Wrap" Text="No receiver track: the game plays one of its hit reactions when this lands. Shown in the preview only (the game still picks it):" />
+                      <ComboBox x:Name="ReactionBox" HorizontalAlignment="Stretch" />
+                    </StackPanel>
+                  </Grid>
+                </Border>
+
+                <StackPanel Spacing="8">
+                  <Grid ColumnDefinitions="Auto,*"><Border Classes="bar" /><TextBlock Grid.Column="1" Classes="h" Text="Frames and speed" /></Grid>
+                  <Grid ColumnDefinitions="*,10,*" RowDefinitions="Auto,Auto,8,Auto,Auto">
+                    <TextBlock Classes="label" Text="Start frame" Margin="0,0,0,3" />
+                    <NumericUpDown Grid.Row="1" x:Name="SelIn" Minimum="0" FormatString="0" />
+                    <TextBlock Grid.Column="2" Classes="label" Text="End frame" Margin="0,0,0,3" />
+                    <NumericUpDown Grid.Row="1" Grid.Column="2" x:Name="SelOut" Minimum="0" FormatString="0" />
+                    <TextBlock Grid.Row="3" Classes="label" Text="Length (frames)" Margin="0,0,0,3" />
+                    <NumericUpDown Grid.Row="4" x:Name="SelFrames" Minimum="1" FormatString="0" />
+                    <TextBlock Grid.Row="3" Grid.Column="2" Classes="label" Text="Speed" Margin="0,0,0,3" />
+                    <NumericUpDown Grid.Row="4" Grid.Column="2" x:Name="SelSpeed" Minimum="5" Maximum="800" Increment="5" FormatString="0'%'" />
+                  </Grid>
+                </StackPanel>
+
+                <StackPanel Spacing="8">
+                  <Grid ColumnDefinitions="Auto,*"><Border Classes="bar" /><TextBlock Grid.Column="1" Classes="h" Text="Into this clip" /></Grid>
+                  <Grid ColumnDefinitions="*,10,100">
+                    <ComboBox x:Name="SelJoin" HorizontalAlignment="Stretch" SelectedIndex="0">
+                      <ComboBoxItem Content="Cut straight in" />
+                      <ComboBoxItem Content="Blend in (old pose fades)" />
+                      <ComboBoxItem Content="Smooth (keeps moving)" ToolTip.Tip="The new clip plays from its first frame and the jump between the clips fades away, so the wrestlers keep moving through the cut" />
+                    </ComboBox>
+                    <NumericUpDown Grid.Column="2" x:Name="SelBlend" Minimum="1" Maximum="60" Value="8" FormatString="0' f'" />
+                  </Grid>
+                  <TextBlock Classes="label" Text="Line up with the clip before" />
+                  <ComboBox x:Name="SelAlign" HorizontalAlignment="Stretch" SelectedIndex="0">
+                    <ComboBoxItem Content="Off" />
+                    <ComboBoxItem Content="Auto (keeps a downed receiver in place)" />
+                    <ComboBoxItem Content="Keep the attacker where he is" />
+                    <ComboBoxItem Content="Keep the receiver where he is" />
+                    <ComboBoxItem Content="Continue the clip before (after a cut)" />
+                  </ComboBox>
+                </StackPanel>
+
+                <StackPanel Spacing="8">
+                  <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Border Classes="bar" />
+                    <TextBlock Grid.Column="1" Classes="h" Text="Turn and move" />
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="4">
+                      <Button x:Name="AdjCopyButton" Content="Copy" Classes="small" ToolTip.Tip="Copy this clip's placement (where both wrestlers stand and face)" />
+                      <Button x:Name="AdjPasteButton" Content="Paste" Classes="small" IsEnabled="False" ToolTip.Tip="Put this clip in the copied placement" />
+                      <Button x:Name="AdjResetButton" Content="Reset" Classes="small" />
+                    </StackPanel>
+                  </Grid>
+                  <Grid ColumnDefinitions="22,*,6,*,6,*" RowDefinitions="Auto,4,Auto,6,Auto">
+                    <TextBlock Grid.Column="1" Classes="label" Text="Turn °" />
+                    <TextBlock Grid.Column="3" Classes="label" Text="Side (X)" />
+                    <TextBlock Grid.Column="5" Classes="label" Text="Depth (Z)" />
+                    <Ellipse Grid.Row="2" Width="9" Height="9" Fill="#E8C4AE" VerticalAlignment="Center" />
+                    <NumericUpDown Grid.Row="2" Grid.Column="1" x:Name="AdjATurn" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-360" Maximum="360" Increment="5" Value="0" FormatString="0.#" />
+                    <NumericUpDown Grid.Row="2" Grid.Column="3" x:Name="AdjAX" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-100" Maximum="100" Increment="0.5" Value="0" FormatString="0.0" />
+                    <NumericUpDown Grid.Row="2" Grid.Column="5" x:Name="AdjAZ" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-100" Maximum="100" Increment="0.5" Value="0" FormatString="0.0" />
+                    <Ellipse Grid.Row="4" Width="9" Height="9" Fill="#82A8E4" VerticalAlignment="Center" />
+                    <NumericUpDown Grid.Row="4" Grid.Column="1" x:Name="AdjRTurn" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-360" Maximum="360" Increment="5" Value="0" FormatString="0.#" />
+                    <NumericUpDown Grid.Row="4" Grid.Column="3" x:Name="AdjRX" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-100" Maximum="100" Increment="0.5" Value="0" FormatString="0.0" />
+                    <NumericUpDown Grid.Row="4" Grid.Column="5" x:Name="AdjRZ" ShowButtonSpinner="False" HorizontalContentAlignment="Center" Minimum="-100" Maximum="100" Increment="0.5" Value="0" FormatString="0.0" />
+                  </Grid>
+                  <TextBlock Classes="faint" TextWrapping="Wrap" Text="Or drag the handle in the 3D view: ring = turn, red / green arrow = slide, centre dot = move anywhere. Click a wrestler to give him the handle. Copy / Paste puts another clip in the same place." />
+                </StackPanel>
+
+                <Button x:Name="ApplyButton" Classes="accent" Content="Apply changes" HorizontalAlignment="Stretch" />
+
+                <Border Classes="well">
+                  <StackPanel Spacing="8">
+                    <Grid ColumnDefinitions="Auto,*"><Border Classes="bar" /><TextBlock Grid.Column="1" Classes="h" Text="Swap a track" /></Grid>
+                    <TextBlock Classes="faint" TextWrapping="Wrap" Text="Put another move's animation on one wrestler of this clip." />
+                    <Grid ColumnDefinitions="*,8,Auto">
+                      <ComboBox x:Name="ImportLane" HorizontalAlignment="Stretch" SelectedIndex="1">
+                        <ComboBoxItem Content="Attacker" />
+                        <ComboBoxItem Content="Receiver" />
+                      </ComboBox>
+                      <Button Grid.Column="2" x:Name="ImportButton" Content="Choose…" />
+                    </Grid>
+                    <TextBlock x:Name="ImportText" Classes="faint" TextWrapping="Wrap" Text="Both tracks come from the same move" />
+                  </StackPanel>
+                </Border>
+              </StackPanel>
+            </ScrollViewer>
+          </TabItem>
+          <TabItem Header="All clips">
+            <Grid RowDefinitions="Auto,*" Margin="4,10,4,0">
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBlock x:Name="BlockCountText" Classes="faint" Text="no clips yet" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
+                  <Button x:Name="UpButton" Classes="round" Content="↑" />
+                  <Button x:Name="DownButton" Classes="round" Content="↓" />
+                  <Button x:Name="RemoveButton" Content="Remove" Classes="small" />
+                </StackPanel>
+              </Grid>
+              <ListBox Grid.Row="1" x:Name="BlockList" Classes="rows" Margin="0,10,0,0">
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <Border Classes="row">
+                      <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                        <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Grid.Column="1" Text="{Binding Join}" FontSize="10.5" Foreground="{StaticResource AccentHi}" Margin="8,0,0,0" />
+                        <TextBlock Grid.Row="1" Classes="faint" Text="{Binding Range}" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Classes="faint" Text="{Binding Kind}" HorizontalAlignment="Right" />
+                      </Grid>
+                    </Border>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+          </TabItem>
+        </TabControl>
+      </Border>
+    </Grid>
+
+    <!-- status bar -->
+    <Border Grid.Row="2" Background="{StaticResource Surface}" Padding="16,6">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock x:Name="StatusText" Classes="sub" Text="Choose your SvR 2011 game folder to start." />
+        <TextBlock Grid.Column="1" Classes="faint" x:Name="VersionText" Text="AnimIT  ·  30 FPS" />
+      </Grid>
+    </Border>
+  </Grid>
+</Window>
