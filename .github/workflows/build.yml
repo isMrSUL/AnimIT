@@ -1,0 +1,38 @@
+# Builds AnimIT and checks the porter's Python on every push and pull request.
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build AnimIT
+        run: dotnet build app/AnimIT.csproj -c Release -o build
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check the porter's Python
+        run: |
+          pip install -r app/Porter/requirements.txt
+          python -m compileall -q app/Porter
+
+      - name: No game files or Oodle
+        shell: pwsh
+        run: |
+          $bad = git ls-files | Where-Object { $_ -match '(?i)(oo2core.*\.dll|\.(pac|cak|clips|clip|utoc|ucas|uasset|uexp|iso)$)' }
+          if ($bad) { Write-Error "Game or proprietary files must not be committed: $bad"; exit 1 }

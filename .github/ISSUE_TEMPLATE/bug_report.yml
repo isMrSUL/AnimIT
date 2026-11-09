@@ -1,0 +1,41 @@
+name: Bug report
+description: Something in AnimIT does not work (the editor, saving, the 3D view…)
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please do **not** attach game files or Oodle DLLs.
+        For a move that ports badly, use the **Move port problem** form instead.
+  - type: input
+    id: version
+    attributes:
+      label: AnimIT version
+      description: Bottom right of the main window, for example 2.1.0
+    validations:
+      required: true
+  - type: input
+    id: port
+    attributes:
+      label: SvR 2011 PC port version
+      placeholder: for example 2.1.0
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Load moves
+        2. Add Frog Splash with Add whole move
+        3. Save to game…
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots, video or error text
+      description: Drag images here, or paste the error message.

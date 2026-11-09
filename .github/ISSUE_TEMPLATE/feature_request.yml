@@ -1,0 +1,22 @@
+name: Feature request
+description: An idea to make AnimIT better
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should AnimIT do, and why would it help you?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example
+      description: A move, a screenshot, or another tool that does something similar.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I would like to work on this myself (send a pull request)

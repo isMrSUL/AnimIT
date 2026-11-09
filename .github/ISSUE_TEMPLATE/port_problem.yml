@@ -1,0 +1,67 @@
+name: Move port problem
+description: A move ported from HCTP, WWE 2K26 or AEW Fight Forever looks or plays wrong
+labels: [porter]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The more details you give, the easier it is to fix. Please do **not** attach game files or Oodle DLLs.
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source game
+      options:
+        - WWE HCTP (PS2)
+        - WWE 2K26 (PC)
+        - AEW Fight Forever (PS4)
+    validations:
+      required: true
+  - type: input
+    id: move
+    attributes:
+      label: Source move
+      description: Its name and id as shown in the porter (for example "Dead Eye · 040_00014_000")
+    validations:
+      required: true
+  - type: input
+    id: donor
+    attributes:
+      label: Donor
+      description: The SvR 2011 move you chose (name and id), and its rank in Best matches if you know it
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: AnimIT version
+      placeholder: 2.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it go wrong?
+      multiple: true
+      options:
+        - In the porter's 3D preview
+        - In the Create-a-Moveset preview
+        - In a match
+        - The move does not appear in Create-a-Moveset
+        - Build or install fails with an error
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: For example "the opponent flips at the end", "the attacker stands in the wrong place", "the hit is late".
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: worker.log
+      description: From %LOCALAPPDATA%\AnimIT\PortedMoves\jobs (the newest folder). Paste it or drag the file here.
+      render: text
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or video

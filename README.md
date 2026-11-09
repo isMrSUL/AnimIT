@@ -67,6 +67,12 @@ To port a move from another game, click **Port moves…** — see the [porting g
 - [Building from source](docs/BUILDING.md)
 - [Changelog](CHANGELOG.md)
 
+## Contributing
+
+AnimIT is open to everyone: fix bugs, add features, support more games, improve the guides. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) to get started, report problems with the [issue forms](../../issues/new/choose),
+and ask questions in [Discussions](../../discussions).
+
 ## Credits and license
 
 AnimIT is made by **SUL** ([MrSUL](https://github.com/isMrSUL)).
