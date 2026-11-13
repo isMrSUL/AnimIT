@@ -1,0 +1,57 @@
+# Tells the SUL Modding Discord when a release is published here.
+# It posts in #announcements and pings everyone who picked the Updates role.
+#
+# Set up once: the repository secret DISCORD_RELEASES holds the webhook URL of the
+# "Releases" webhook in that channel (Settings -> Secrets and variables -> Actions).
+# Without the secret this job does nothing, so a fork never posts anywhere.
+#
+# To try it without releasing anything: Actions -> announce -> Run workflow.
+name: announce
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discord:
+    if: ${{ github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && !github.event.release.draft) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post the release to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_RELEASES }}
+          ROLE: '1570771319643971694'          # the Updates role on SUL Modding
+          TITLE: ${{ github.event.release.name || github.event.release.tag_name || 'Test post' }}
+          LINK: ${{ github.event.release.html_url || format('https://github.com/{0}/releases', github.repository) }}
+          NOTES: ${{ github.event.release.body || 'This is only a test of the Discord message. Nothing was released.' }}
+          TOOL: ${{ github.event.repository.name }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then
+            echo "No DISCORD_RELEASES secret in this repository - nothing was posted."
+            exit 0
+          fi
+          jq -n --arg t "$TITLE" --arg u "$LINK" --arg n "$NOTES" --arg r "$ROLE" --arg tool "$TOOL" '
+            {
+              content: "<@&\($r)>  **\($t)** is out",
+              allowed_mentions: { parse: [], roles: [$r] },
+              embeds: [{
+                title: $t,
+                url: $u,
+                description: (
+                  if   ($n | length) == 0   then "A new version is out. Open the link to see what changed."
+                  elif ($n | length) > 1500 then ($n[0:1500] + "\n\n… the rest is on the release page.")
+                  else $n end
+                ),
+                color: 3447003,
+                footer: { text: "\($tool) - download from the Releases page" }
+              }]
+            }' > payload.json
+          echo "The message (without the webhook address):"
+          cat payload.json
+          curl -sS --fail-with-body -X POST -H "Content-Type: application/json" \
+               --data @payload.json "$WEBHOOK"
+          echo "Posted to Discord."
