@@ -13,6 +13,7 @@
   <a href="../../releases/latest">Download</a> ·
   <a href="docs/USER_GUIDE.md">User guide</a> ·
   <a href="docs/PORTING_GUIDE.md">Porting guide (HCTP / 2K26 / AEW)</a> ·
+  <a href="https://discord.gg/EfprRmbEt2"><b>Discord</b></a> ·
   <a href="docs/BUILDING.md">Build from source</a>
 </p>
 
@@ -67,11 +68,16 @@ To port a move from another game, click **Port moves…** — see the [porting g
 - [Building from source](docs/BUILDING.md)
 - [Changelog](CHANGELOG.md)
 
+## Discord
+
+**[discord.gg/EfprRmbEt2](https://discord.gg/EfprRmbEt2)** — SUL Modding, the home of AnimIT and PortIT: help when
+something goes wrong, a ping when a new version comes out, and a place to show the moves and mods you make.
+
 ## Contributing
 
 AnimIT is open to everyone: fix bugs, add features, support more games, improve the guides. Read
 [CONTRIBUTING.md](CONTRIBUTING.md) to get started, report problems with the [issue forms](../../issues/new/choose),
-and ask questions in [Discussions](../../discussions).
+and ask questions in [Discussions](../../discussions) or in **#help** on the [Discord](https://discord.gg/EfprRmbEt2).
 
 ## Credits and license
 

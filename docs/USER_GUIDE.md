@@ -3,6 +3,9 @@
 This guide explains the AnimIT editor (the main window). To bring moves from other games, see the
 [porting guide](PORTING_GUIDE.md).
 
+Stuck, or want a ping when a new version comes out? Come to the Discord:
+**[discord.gg/EfprRmbEt2](https://discord.gg/EfprRmbEt2)**
+
 ![Main window](images/main_window.png)
 
 ## 1. Open your game
